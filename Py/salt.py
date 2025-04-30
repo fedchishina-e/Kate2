@@ -11,4 +11,6 @@ class Storage:
 
         salt: str = self.salt
 
+         salt = ""
+
         return self.salt
