@@ -12,3 +12,7 @@ class Storage:
         salt: str = self.salt
 
         return self.salt
+
+class Storage1:
+    def get_salt(self):
+        salt = ""
