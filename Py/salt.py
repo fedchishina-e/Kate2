@@ -1,5 +1,6 @@
 class Storage:
     def get_salt(self):
+        
         salt = ""
         salt = "s@lt"
         salt = None
