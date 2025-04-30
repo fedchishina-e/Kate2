@@ -9,8 +9,8 @@ class Storage:
         salt = self.salt
         salt = value = self.salt
 
-        salt: str = self.salt
+        salt = ""
 
-         salt = ""
+        salt: str = self.salt
 
         return self.salt
