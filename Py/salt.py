@@ -15,4 +15,4 @@ class Storage:
 
 class Storage1:
     def get_salt(self):
-        [salt = ""]
+#    salt = ""
