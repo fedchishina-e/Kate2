@@ -15,7 +15,8 @@ class Storage:
 
 class Storage1:
     def get_salt(self):
-        salt = ""
+        if salt = ""
+            salt = self.salt
         salt = None
         self.salt = self.salt
         salt = self.salt
