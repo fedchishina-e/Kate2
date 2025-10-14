@@ -1,0 +1,10 @@
+PROCEDURE "Test" ( ) 
+	LANGUAGE SQLSCRIPT
+	SQL SECURITY INVOKER 
+	READS SQL DATA AS
+BEGIN
+    -- Присвоение пароля в исходном коде
+    LV_USERPASS = 'TopSecret01';
+
+	ROOT_USERPASS = 'TopSecret02';
+END;
