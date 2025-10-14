@@ -1,0 +1,79 @@
+CREATE PROCEDURE orchestrationProc LANGUAGE SQLSCRIPT READS
+SQL DATA
+AS
+BEGIN
+
+    CREATE COLUMN TABLE t1 ( id INT PRIMARY KEY, customer VARCHAR(5), year INT, product VARCHAR(5), sales INT );
+    INSERT INTO t1 VALUES(1, 'C1', 2009, 'P1', 100);
+    INSERT INTO t1 VALUES(2, 'C1', 2009, 'P2', 200);
+    INSERT INTO t1 VALUES(3, 'C1', 2010, 'P1', 50);
+    INSERT INTO t1 VALUES(4, 'C1', 2010, 'P2', 150);
+    INSERT INTO t1 VALUES(5, 'C2', 2009, 'P1', 200);
+    INSERT INTO t1 VALUES(6, 'C2', 2009, 'P2', 300);
+    INSERT INTO t1 VALUES(7, 'C2', 2010, 'P1', 100);
+    INSERT INTO t1 VALUES(8, 'C2', 2010, 'P2', 150);
+
+    -- Слишком широкая выборка
+    SELECT * FROM t1
+        GROUP BY CUBE(customer, year);
+
+
+    SELECT customer, year, SUM(sales)
+        FROM t1
+        GROUP BY GROUPING SETS
+        (
+        (customer, year),
+        (customer),
+        (year)
+        )
+    UNION ALL
+    SELECT NULL, NULL, SUM(sales)
+        FROM t1;
+
+
+    -- -- Учётная запись по умолчанию
+    -- ALTER USER SYSTEM ACTIVATE USER NOW;
+
+
+    -- Слабый алгоритм хеширования
+    SELECT HASH_MD5 AS "hash" FROM t2;
+
+
+    -- Инициализация пароля в исходном коде
+    DECLARE ROOT_USERPASS varchar(20) = 'TopSecret01';
+    -- Присвоение пароля в исходном коде
+    ROOT_USERPASS = 'TopSecret02';
+
+
+    -- Инициализация пароля значением null
+    DECLARE USERPASS varchar(20) = NULL;
+    -- Присвоение паролю значения null
+    LV_USERPASS = NULL;
+
+
+    -- Инициализация пустого пароля
+    DECLARE LV_USERPASS varchar(20) = '';
+    -- Присвоение пустого пароля
+    USERPASS = '';
+
+
+    -- Инициализация ключа шифрования в исходном коде
+    DECLARE user_key varchar(20) = 'qwerty';
+    -- Присвоение ключа шифрования в исходном коде
+    user_key = 'qwerty!';
+
+
+    -- Инициализация ключа шифрования значением null
+    DECLARE user_key varchar(20) = NULL;
+    -- Присвоение ключу шифрования значения null
+    user_key = NULL;
+
+
+    -- Инициализация пустого ключа шифрования
+    DECLARE user_key varchar(20) = '';
+    -- Присвоение пустого ключа шифрования
+    user_key = '';
+
+
+END
+
