@@ -34,3 +34,4 @@ String conn = "Some text";
 if (conn.Equals(null)) {
     // Some code
 }
+
