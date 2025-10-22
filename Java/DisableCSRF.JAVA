@@ -37,5 +37,4 @@ public class DisableSCRFCheckTest extends WebSecurityConfigurerAdapter{
         csrf2.ignoringAntMatchers(route); // Semantic Flaw
         csrf2.ignoringAntMatchers(); // Semantic Flaw
     }
-
 }
