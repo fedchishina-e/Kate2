@@ -18,6 +18,7 @@ pswd = "";
 // Присвоение паролю значения null
 pswd = null;
 
+// комментарий1
 
 String login = Console.ReadLine();
 // Специальная учётная запись
@@ -30,9 +31,11 @@ if (login.Equals("superAdmin@mail.com")) {
 GC.Collect();
 
 
+
 String conn = "Some text";
 if (conn.Equals(null)) {
     // Some code
 }
+
 
 
