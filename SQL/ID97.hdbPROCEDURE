@@ -1,8 +1,0 @@
-CREATE PROCEDURE orchestrationProc LANGUAGE SQLSCRIPT READS
-SQL DATA
-AS
-BEGIN
-    -- Присвоение ключа шифрования в исходном коде
-    user_key = 'qwerty';
-
-END
