@@ -1,2 +1,0 @@
-# S_DF_013_Инструкция MAINTAINER x1
-MAINTAINER bob
